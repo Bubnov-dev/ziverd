@@ -1,1 +1,60 @@
 @import "base.sass"
+
+.main-screen
+    background-image: url(../img/1.png)
+    background-size: cover
+    position: relative
+
+    &__description
+        position: absolute
+        bottom: 40px
+        right: 50px
+        width: 45%
+
+    .h1
+        margin: auto
+
+        padding-top: 180px
+        padding-bottom: 100px
+        font-size: 45px
+        display: grid
+        place-items: center
+        .company-name
+            font-size: 60px
+
+.production-screen   
+    color: $grey 
+    .h2
+        margin: 65px 105px 0
+        height: fit-content
+
+    &__description
+        position: relative
+        width: 72%
+        justify-self: end
+        right: 40px
+        margin-left: auto
+        margin-top: 71px;
+
+    .pic-grid
+        margin-top: 0px
+        display: grid
+        gap: 0px 50px
+        grid-template-columns: 2fr 1.2fr
+        *
+            max-width: 100%
+
+    &__lamps
+        display: flex
+        gap: 54px;
+        padding-left: 57px;
+
+    &__desc-1
+        width: 60%
+        margin-left: 10px
+
+    &__desc-2
+        grid-row: 3/4
+        grid-column: 2/3
+        margin-top: 65px
+        margin-left: 5px
