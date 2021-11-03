@@ -24,8 +24,8 @@ body {
 
 .container {
   height: 100%;
-  max-width: 100%;
-  width: 1000px;
+  max-width: 1000px;
+  width: 92%;
   margin: 0 auto;
 }
 
@@ -53,17 +53,20 @@ picture {
 }
 
 .big-title {
+  font-family: sans-serif;
+  gap: 15px;
+  color: #7f7f7f;
+}
+
+.big-title__main {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  font-size: 41px;
-  font-family: sans-serif;
   text-transform: uppercase;
-  gap: 15px;
-  color: #7f7f7f;
+  font-size: 41px;
 }
 
 .big-title svg {
@@ -73,8 +76,10 @@ picture {
 
 .big-title__subtitle {
   font-size: 20px;
-  width: 40%;
+  width: 46%;
+  margin-top: 13px;
   margin-left: auto;
+  font-weight: normal;
 }
 
 .main-screen {
@@ -83,17 +88,26 @@ picture {
   position: relative;
 }
 
+.main-screen .container {
+  display: grid;
+  grid-template-rows: 70% 30%;
+}
+
 .main-screen__description {
-  position: absolute;
-  bottom: 40px;
-  right: 50px;
+  margin-bottom: 40px;
+  margin-right: 50px;
+  margin-left: auto;
   width: 45%;
+  grid-column: 1/2;
+  grid-row: 2/3;
+  place-self: end;
 }
 
 .main-screen .h1 {
+  grid-column: 1/2;
+  grid-row: 1/2;
   margin: auto;
-  padding-top: 180px;
-  padding-bottom: 100px;
+  text-align: center;
   font-size: 45px;
   display: grid;
   place-items: center;
@@ -264,31 +278,31 @@ picture {
   font-size: 20px;
 }
 
-.projects-screen .slider-grid {
+.slider-grid {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  gap: 30px 20px;
+  gap: 20px 20px;
   padding: 10px 25px;
 }
 
-.projects-screen .slider-grid .tab-item {
+.slider-grid .tab-item {
   height: 260px;
   width: 100%;
   position: relative;
 }
 
-.projects-screen .slider-grid .tab-item picture,
-.projects-screen .slider-grid .tab-item img {
+.slider-grid .tab-item picture,
+.slider-grid .tab-item img {
   width: 100%;
   height: 100%;
 }
 
-.projects-screen .slider-grid .tab-item img {
+.slider-grid .tab-item img {
   -o-object-fit: cover;
      object-fit: cover;
 }
 
-.projects-screen .slider-grid .tab-item__title {
+.slider-grid .tab-item__title {
   position: absolute;
   bottom: 0;
   left: 0;
@@ -299,6 +313,20 @@ picture {
   padding: 5px;
   font-weight: bold;
   color: #595959;
+  height: 3em;
+}
+
+.light-projects-screen h2 {
+  margin-bottom: 70px;
+}
+
+.light-projects-screen .slider-grid .tab-item {
+  height: 200px;
+}
+
+.light-projects-screen .slider-grid .tab-item__title {
+  font-size: 18px;
+  height: 3em;
 }
 @supports (-webkit-appearance:none){
 .main-screen{background-image:url(../img/1.webp)}

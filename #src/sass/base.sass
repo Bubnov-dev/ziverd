@@ -25,8 +25,8 @@ body
 
 .container
     height: 100%
-    max-width: 100%
-    width: 1000px
+    max-width: 1000px
+    width: 92%
     margin: 0 auto
 
 picture
@@ -39,7 +39,6 @@ picture
     line-height: 1.4
 
 .plain-text-2
-
     font-size: 20.5px;
     font-family: sans-serif;
     line-height: 1.4
@@ -50,11 +49,12 @@ picture
     font-family: sans-serif
 
 .big-title
-    display: flex
-    align-items: center
-    font-size: 41px
+    &__main
+        display: flex
+        align-items: center
+        text-transform: uppercase
+        font-size: 41px
     font-family: sans-serif
-    text-transform: uppercase
     gap: 15px
     color: $grey
     svg
@@ -63,6 +63,8 @@ picture
 
     &__subtitle
         font-size: 20px
-        width: 40%
+        width: 46%
+        margin-top: 13px
         margin-left: auto
+        font-weight: normal
 
