@@ -1,22 +1,56 @@
 @import "base.sass"
 
+.slick-arrow
+    height: 30px !important
+    width: 30px !important
+    margin: 10px
+    z-index: 100
+
+    svg
+        width: 100%
+        height: 100%
+    &::before
+        content: ""
+        display: none
+        
+
+.slick-prev
+    left: -15px
+
+
+.slick-next
+    right: -15px
+
+
 .main-screen
     background-image: url(../img/1.png)
     background-size: cover
     position: relative
+    min-height: 90vh
+
 
     .container
         display: grid
-        grid-template-rows: 70% 30%
+        grid-template-rows: 2fr
+        padding-bottom: 40px
+        gap: 20px
+
 
     &__description
-        margin-bottom: 40px
         margin-right: 50px
         margin-left: auto
         width: 45%
         grid-column: 1/2
         grid-row: 2/3
         place-self: end
+        background: #ffffff77
+        padding: 10px
+        border-radius: 5px
+
+        @media screen and ( max-width: $mobile )
+            width: 80%
+            font-size: 15px
+        
 
     .h1
         grid-column: 1/2
@@ -26,14 +60,21 @@
         font-size: 45px
         display: grid
         place-items: center
+        background: #ffffff77
+        padding: 15px
+        border-radius: 10px
+        @media screen and ( max-width: $mobile )
+            font-size: 9vw
         .company-name
             font-size: 60px
+            @media screen and ( max-width: $mobile )
+                font-size: 11vw
 
 .production-screen   
     color: $grey 
     .h2
-        margin: 65px 105px 0
         height: fit-content
+
 
     &__description
         position: relative
@@ -41,7 +82,15 @@
         justify-self: end
         right: 40px
         margin-left: auto
-        margin-top: 71px;
+        margin-top: 71px
+        margin-bottom: 20px
+
+        @media screen and ( max-width: $tablet )
+            width: 100%
+            right: 0
+            margin-bottom: 20px
+        @media screen and ( max-width: $mobile )
+            margin: 10px 0
 
     .pic-grid
         margin-top: 0px
@@ -51,14 +100,26 @@
         *
             max-width: 100%
 
+        @media screen and ( max-width: $tablet )
+            gap: 20px 40px
+
+        @media screen and ( max-width: $mobile )
+            grid-template-columns: 100%
+
+
     &__lamps
         display: flex
         gap: 54px;
         padding-left: 57px;
+        @media screen and ( max-width: $mobile )
+            padding-left: 0
 
     &__desc-1
         width: 60%
         margin-left: 10px
+
+        @media screen and ( max-width: $mobile )
+            width: 100%
 
     &__desc-2
         grid-row: 3/4
@@ -66,17 +127,29 @@
         margin-top: 65px
         margin-left: 5px
 
+        @media screen and ( max-width: $tablet )
+            grid-row: 2/3
+            margin: 0
+
+        @media screen and ( max-width: $mobile )
+            grid-column: 1/2
+
 .assortment-screen
 
     .content-wrapper
         width: 78%;
         margin: auto;
+        @media screen and ( max-width: $tablet )
+            width: 95%
 
     &__grid
         width: 100%
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
         gap: 0 50px;
+
+        @media screen and ( max-width: $tablet )
+            grid-template-columns: 1fr 1fr
 
         *
             width: 100%
@@ -85,6 +158,9 @@
         text-transform: uppercase
         font-size: 24px;
         margin-left: 31px;
+        @media screen and ( max-width: $mobile )
+            font-size: 5.5vw
+
 
     &__product
         position: relative
@@ -110,9 +186,25 @@
         margin-left: auto
         margin-top: 85px
         width: fit-content
+        transition: .3s
+        border-bottom: 2px solid #0000
+
+
+        &:hover
+            border-bottom: 2px solid black
+
+        a
+            text-decoration: none
+            color: black
+
+        @media screen and ( max-width: $tablet )
+            margin-top: 40px
+            margin-bottom: 40px
 
 .project-sol-screen
-    
+    @media screen and ( max-width: $mobile )
+        margin-bottom: 40px
+
     .h2
         margin-bottom: 51px;
 
@@ -140,6 +232,13 @@
             img
                 border-radius: 50% 0 0 50%
 
+        @media screen and ( max-width: $mobile )
+            grid-template-columns: 100%
+            img, picture
+                border-radius: 0
+                grid-row: 2/3
+                
+
         &-text
             color: $grey
             font-family: sans-serif;
@@ -165,6 +264,8 @@
         height: 260px
         width: 100%
         position: relative
+        @media screen and ( max-width: $mobile )
+            padding: 0 10px
 
         picture, img
             width: 100%
@@ -181,19 +282,31 @@
             background: #ffffffb0
             text-align: center
             font-size: 26px
-            padding: 5px
+            padding: 15px
             font-weight: bold
             color: $dark-grey
-            height: 3em
+            display: grid
+            place-items: center
+            
+            @media screen and ( max-width: $tablet )
+                font-size: 3vw
+            @media screen and ( max-width: $mobile )
+                font-size: 4vw
+
+            // box-sizing: content-box
 
         
 .light-projects-screen
-    h2
+    .h2
         margin-bottom: 70px
+
+        @media screen and ( max-width: $tablet )
+            margin-bottom: 10px
 
     .slider-grid
         .tab-item
             height: 200px
             &__title
                 font-size: 18px
-                height: 3em
+                @media screen and ( max-width: $tablet )
+                    font-size: 2.5svw
