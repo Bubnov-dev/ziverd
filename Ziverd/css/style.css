@@ -340,6 +340,11 @@ picture {
   position: relative;
 }
 
+.slider-grid .tab-item picture {
+  grid-template-columns: 100%;
+  grid-template-rows: 100%;
+}
+
 .slider-grid .tab-item picture,
 .slider-grid .tab-item img {
   width: 100%;
@@ -349,6 +354,8 @@ picture {
 .slider-grid .tab-item img {
   -o-object-fit: cover;
      object-fit: cover;
+  grid-column: 1/2;
+  grid-row: 1/2;
 }
 
 .slider-grid .tab-item__title {
@@ -358,7 +365,7 @@ picture {
   width: 100%;
   background: #ffffffb0;
   text-align: center;
-  font-size: 26px;
+  font-size: 24px;
   padding: 15px;
   font-weight: bold;
   color: #595959;
