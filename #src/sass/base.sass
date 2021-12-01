@@ -1,3 +1,5 @@
+@import "fonts.sass"
+    
 /* Экраны */
 $desktop: 1280px
 $tablet: 900px
@@ -5,8 +7,15 @@ $mobile: 568px
 $small-mobile: 360px
 
 /* Цвета */
-$grey: #7f7f7f
-$dark-grey: #595959
+$dark: #333333;
+$yellow: #F4E9BF;
+$red: #DA5C3E;
+$light: #FFF9E2;
+$light-grey: #E5E5E5;
+$grey: #828282;
+
+
+
 
 
 /*Общие стили*/
@@ -14,73 +23,123 @@ $dark-grey: #595959
     box-sizing: border-box
     
 body
-    font-family: sans-serif;
-
     margin: 0
     padding: 0
     overflow-x: hidden
-
-.screen
-    // min-height: 90vh
-    display: grid
+    font-family: 'Futura New'
 
 .container
-    height: 100%
-    max-width: 1000px
-    width: 92%
-    margin: 0 auto
+    padding: 0 92px
+h1
+    font-size: 48px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 61px;
+    letter-spacing: 0em;
+    text-align: left;
+
+h2
+    font-size: 36px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 45px;
+    letter-spacing: 0em;
+    text-align: left;
+
+.horiz-h
+    position: relative
+    &::before
+        position: absolute
+        top: 50%
+        left: -87px
+        content: ''
+        width: 70px
+        height: 3px
+        background-color: $red
+
+    &__subtitle
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 22px;
+        letter-spacing: 0em;
+        text-align: left;
+        color: $red
+
+.vert-h
+    position: relative
+    padding-top: 91px
+    margin-bottom: 42px
+    &::before
+        position: absolute
+        top: 0
+        left: -87px
+        content: ''
+        width: 20px
+        height: 251px
+        background-color: $dark
+
+
+.btn
+    border-radius: 10px;        
+
+img
+    border-radius: 20px 0px;
+
+.card
+    border: none
+    &-body
+        padding: 32px 0
+        max-width: 321px
+
+    &-title
+        text-decoration: underline
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 23px;
+        letter-spacing: 0em;
+        text-align: left;
+        a
+            color: black
+
+    &-text
+        font-size: 15px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 18px;
+        letter-spacing: 0em;
+        text-align: left;
+
+    &-price
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 18px;
+        letter-spacing: 0em;
+        text-align: left;
+
+
+    
+    &--new
+        &::after
+            top: 3rem
+            position: absolute
+            content: "НОВИНКА"
+            padding: 8px 16px
+            right: -16px
+            background-color: $red
+            font-size: 12px;
+            font-style: normal;
+            font-weight: 600;
+            line-height: 15px;
+            letter-spacing: 0em;
+            text-align: left;
+            color: white
+
 
 picture
     display: grid
 
-.plain-text
-    font-size: 19px;
-    font-family: sans-serif;
-    font-weight: bold
-    line-height: 1.4
-
-.plain-text-2
-    font-size: 20.5px;
-    font-family: sans-serif;
-    line-height: 1.4
-
-.plain-title
-    font-size: 34px
-    color: $grey
-    font-family: sans-serif
-    @media screen and ( max-width: $mobile )
-        margin: 30px 0 20px        
-        font-size: 7vw
-
-.big-title
-    &__main
-        display: flex
-        align-items: center
-        text-transform: uppercase
-        font-size: 41px
-        gap: 10px
-        @media screen and ( max-width: $tablet )
-            font-size: 3.7vw
-        @media screen and ( max-width: $mobile )
-            font-size: 6vw
-    font-family: sans-serif
-    gap: 15px
-    color: $grey
-    svg
-        flex-shrink: 0
-        @media screen and ( max-width: $mobile )
-            height: 40px
-        // height: 45px    
-        // width: 74px
-
-    &__subtitle
-        font-size: 20px
-        width: 46%
-        margin-top: 13px
-        margin-left: auto
-        font-weight: normal
-        text-align: right
-        margin-right: 25px
-        @media screen and ( max-width: $tablet )
-            width: 80%
-
+.yellow
+    color: $yellow

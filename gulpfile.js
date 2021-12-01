@@ -7,6 +7,7 @@ let path = {
   build: {
     html: projectFolder + "/",
     css: projectFolder + "/css/",
+    libcss: projectFolder + "/libcss/",
     js: projectFolder + "/js/",
     img: projectFolder + "/img/",
     fonts: projectFolder + "/fonts/"
@@ -14,6 +15,7 @@ let path = {
   src: {
     html: [srcFolder + "/*.html", "!" + srcFolder + "/_*.html"],
     css: srcFolder + "/sass/*.{sass,css}",
+    libcss: srcFolder + "/libcss/*.css",
     js: srcFolder + "/js/*.js",
     img: srcFolder + "/img/**/*.{jpg,png,svg,gif,ico,webp}",
     fonts: srcFolder + "/fonts/**/*.ttf",
@@ -21,6 +23,7 @@ let path = {
   watch: {
     html: srcFolder + "/**/*.html",
     css: srcFolder + "/sass/**/*.sass",
+    libcss: srcFolder + "/libcss/**/*.css",
     js: srcFolder + "/js/**/*.js",
     img: srcFolder + "/img/**/*.{jpg,png,svg,gif,ico,webp}",
     fonts: projectFolder + "/fonts/**/*.ttf"
@@ -66,7 +69,11 @@ function html() {
     .pipe(dest(path.build.html))
     .pipe(browser_sync.stream())
 }
-
+function libcss() {
+  return src(path.src.libcss)
+    .pipe(dest(path.build.libcss))
+    .pipe(browser_sync.stream())
+}
 function css() {
   return src(path.src.css)
     .pipe(
@@ -172,6 +179,7 @@ function cb() { }
 
 function watchFiles() {
   gulp.watch([path.watch.html], {usePolling: true}, html);
+  gulp.watch([path.watch.libcss], {usePolling: true}, libcss);
   gulp.watch([path.watch.css], {usePolling: true}, css);
   gulp.watch([path.watch.js], {usePolling: true}, js);
   gulp.watch([path.watch.img], {usePolling: true}, images);
@@ -181,13 +189,14 @@ function clean(params) {
   return del(path.clean)
 }
 
-const build = gulp.series(clean, gulp.parallel(js, css, html, images, fonts), fontsStyle)
+const build = gulp.series(clean, gulp.parallel(js, libcss, css, html, images, fonts), fontsStyle)
 const watch = gulp.parallel(build, watchFiles, browserSync)
 
 exports.fontsStyle = fontsStyle;
 exports.fonts = fonts;
 exports.images = images;
 exports.js = js;
+exports.libcss = libcss;
 exports.css = css;
 exports.html = html;
 exports.build = build;
